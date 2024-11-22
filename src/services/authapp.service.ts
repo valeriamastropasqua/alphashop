@@ -4,10 +4,26 @@ import { Injectable } from '@angular/core';
   providedIn: 'root'
 })
 export class AuthappService {
+  [x: string]: any;
 
   constructor() { }
 
-  autentica = (userId: string, password: string): boolean =>{
-    return(userId==='Valeria' && password==='123_Stella')? true :false ;
+  autentica = (userid: string, password: string) : boolean => {
+    var retVal = (userid === 'Valeria' && password === '123_Stella') ? true : false;
+
+    if (retVal) {
+      sessionStorage.setItem("Utente",userid);
+    }
+
+    return retVal;
   }
+
+  loggedUser = (): string | null => (sessionStorage.getItem("Utente")) ? sessionStorage.getItem("Utente") : "";
+
+  isLogged = (): boolean => (sessionStorage.getItem("Utente")) ? true : false;
+
+  clearUser = (): void => sessionStorage.removeItem("Utente");
+
+  clearAll = (): void => sessionStorage.clear();
+
 }
