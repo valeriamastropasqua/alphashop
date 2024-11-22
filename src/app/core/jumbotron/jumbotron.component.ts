@@ -8,10 +8,10 @@ import { Component, Input } from '@angular/core';
 export class JumbotronComponent {
 
   @Input()
-   Titolo: string= "";
+  Titolo: string = "";
   @Input()
-  SottoTitolo: string= "";
+  SottoTitolo: string = "";
   @Input()
-  Show: boolean= true;
+  Show: boolean = true;
 
 }

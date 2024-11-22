@@ -7,8 +7,4 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'alphashop';
-
-  saluti: string = "Benvenuti in Alphashop";
-
-  bollini: number = 1500;
 }
